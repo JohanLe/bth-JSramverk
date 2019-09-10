@@ -1,8 +1,6 @@
 Me-App
 ========
 
-####[GitHub](https://github.com)
-
 #### Starta appen
 I en node miljö:
  - Installera  Serve: "npm install -g serve"
