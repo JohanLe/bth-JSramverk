@@ -7,8 +7,7 @@ class Report extends React.Component {
         const kmom = this.props.match.params.kmom;
         // const [questions, setQuestions] = useState([]);
         var questions = [];
-        console.log(this.props.match.params.kmom);
-        switch (this.props.match.params.kmom) {
+        switch (kmom) {
             case "1":
                 questions = kmomOne;
                 break;
@@ -28,7 +27,7 @@ class Report extends React.Component {
 
             <article className="article">
                 <div className="article_header">
-                    <h2>REPORT PAGE</h2>
+                    <h2>REPORTS</h2>
                     <HeaderReports/>
                 </div>
 
