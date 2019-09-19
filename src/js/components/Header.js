@@ -7,10 +7,11 @@ class HeaderMain extends React.Component {
             <div className="link_container">
                 <Link exact url="/" text="Home" class="header_link"/>
                 <Link url="/reports/week/0" text="Reports" class="header_link"/>
+                <Link url="/register" text="Register" class="header_link"/>
                 <Link url="/about" text="About" class="header_link"/>
             </div>
         </header>
-    }
+    }xw
 }
 
 class HeaderReports extends React.Component {

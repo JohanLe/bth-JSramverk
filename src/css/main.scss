@@ -2,18 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,600&display=swap');
 
 
-$backgroundTest: rgba(51, 51, 51, 0.9);
+$mainBGC: rgba(218, 221, 227, 0.34);
+$secondaryBGC: #343434;
 
 html,
 body {
-  width: 100%;
+  width: 98%;
+  max-width: 98%;
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
   line-height: 1.8rem;
 }
+
+body {
+  background-color: $mainBGC;
+}
+
 a {
   text-decoration: none;
-  color: rgba(88,22,255,0.9);
+  color: rgba(88, 22, 255, 0.9);
 }
 
 header {
@@ -22,15 +29,18 @@ header {
   left: 0;
   width: 100%;
   height: 40px;
-  border-bottom: 1px solid black;
-  background-color: #ffffff;
+  background-color: $secondaryBGC;
   z-index: 100;
+  color: #ffffff;
+  box-shadow: 0 2px 4px 0 #3e3e3e;
 
   .link_container {
     margin-left: 30px;
     margin-top: 10px;
   }
+
   a {
+    color: #ffffff;
     font-weight: 600;
     margin-right: 20px;
     text-decoration: none;
@@ -60,4 +70,107 @@ header {
     width: 70%;
     font-size: 18px;
   }
+}
+
+.register_container {
+  margin: 0;
+  position: relative;
+  top: 40px;
+  left: 30%;
+  width: 40%;
+  border: 1px solid rgba(128, 128, 128, 0.63);
+  padding: 10px 0 30px;
+  font-size: 20px;
+  box-shadow: 3px 2px 3px 0 rgba(62, 62, 62, 0.13);
+  background-color: #f8f8f8;
+
+  form {
+    margin: 0;
+    position: relative;
+    left: 15%;
+    width: 70%;
+    height: 100%;
+    text-align: left;
+    padding: 5px;
+    color: rgba(72, 72, 72, 0.74);
+
+    * {
+      display: block;
+      width: 100%;
+    }
+
+    .input_label {
+      margin-bottom: 10px;
+
+      input {
+        height: 28px;
+        font-size: 18px;
+        max-width: 100%;
+        border: 1px solid #8d8d8d;
+        box-shadow: inset 0 0 2px 0 #8d8d8d;
+        border-radius: 5px;
+      }
+
+      :focus {
+        border: 1px solid rgba(115, 125, 255, 0.75);
+        box-shadow: inset 0 0 2px 0 #8d8d8d;
+        border-radius: 5px;
+      }
+    }
+
+    .button_submit {
+      position: relative;
+      left: 25%;
+      width: 100px;
+      height: 35px;
+      box-sizing: content-box;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #009c08;
+      color: rgb(255, 255, 255);
+
+      input {
+        background-color: #35c23d;
+        color: #fff;
+      }
+    }
+
+    .form_link {
+      width: auto;
+      display: inline-block;
+    }
+
+    .form_link:hover {
+      cursor: pointer;
+    }
+
+    .terms_and_conditions_text {
+      font-size: 14px;
+
+      label {
+        margin-left: 5px;
+      }
+    }
+  }
+  .date_picker_container {
+    span {
+      float: left;
+      width: auto;
+    }
+  }
+
+}
+
+.small_description_text {
+  position: relative;
+  top:5px;
+  font-size: 12px;
+  color: #919191;
+  margin-left: 4px;
+}
+.error_message{
+  font-size: 16px;
+  color: #ff4050;
+  display: block;
 }
