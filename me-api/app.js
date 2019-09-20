@@ -3,12 +3,17 @@ const bodyParser = require("body-parser");
 const morgan = require('morgan');
 const cors = require('cors');
 const express = require("express");
+const jwt = require('jsonwebtoken');
+
+
 
 const app = express();
-const port = 1337;
+var router = express.Router();
+const port = 8333;
 
 const index = require('./routes/index.js');
 const hello = require('./routes/hello.js');
+
 
 app.use(cors());
 app.use(bodyParser.json()); // for parsing application/json
@@ -31,6 +36,25 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/hello', hello);
+
+router.post("/reports",
+    (req, res, next) => checkToken(req, res, next),
+    (req, res) => reports.addReport(res, req.body));
+
+function checkToken(req, res, next) {
+    const token = req.headers['x-access-token'];
+
+    jwt.verify(token, process.env.JWT_SECRET, function(err, decoded) {
+        if (err) {
+            // send error response
+        }
+
+        // Valid token send on the request
+        next();
+    });
+}
+
+
 
 app.use((err, req, res, next) => {
     if (res.headersSent) {
