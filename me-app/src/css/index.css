@@ -151,4 +151,72 @@ header a {
   display: block;
 }
 
+.new_report_button {
+  margin-left: 45px;
+  color: #3cff00;
+}
+
+.edit_report_container {
+  margin: 0;
+  position: relative;
+  top: 40px;
+  left: 10%;
+  width: 80%;
+  border: 1px solid rgba(128, 128, 128, 0.63);
+  padding: 10px 0 30px;
+  font-size: 20px;
+  box-shadow: 3px 2px 3px 0 rgba(62, 62, 62, 0.13);
+  background-color: #f8f8f8;
+}
+.edit_report_container form {
+  margin: 0;
+  position: relative;
+  left: 15%;
+  width: 70%;
+  height: 100%;
+  text-align: left;
+  padding: 5px;
+  color: rgba(72, 72, 72, 0.74);
+}
+.edit_report_container form * {
+  display: block;
+  width: 100%;
+}
+.edit_report_container form .question_input_container {
+  margin-bottom: 20px;
+}
+.edit_report_container form .input_label {
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+}
+.edit_report_container form .input_label textarea {
+  font-size: 18px;
+  max-width: 100%;
+  border: 1px solid #8d8d8d;
+  box-shadow: inset 0 0 2px 0 #8d8d8d;
+  border-radius: 5px;
+  resize: both;
+}
+.edit_report_container form .input_label :focus {
+  border: 1px solid rgba(115, 125, 255, 0.75);
+  box-shadow: inset 0 0 2px 0 #8d8d8d;
+  border-radius: 5px;
+}
+.edit_report_container form .button_submit {
+  position: relative;
+  left: 25%;
+  width: 100px;
+  height: 35px;
+  box-sizing: content-box;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #009c08;
+  color: white;
+}
+.edit_report_container form .button_submit input {
+  background-color: #35c23d;
+  color: #fff;
+}
+
 /*# sourceMappingURL=index.css.map */

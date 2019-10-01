@@ -13,7 +13,8 @@
     "build": "sass src/css/main.scss src/css/index.css && react-scripts build",
     "build-css": "sass src/css/main.scss src/css/index.css",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && rsync -av build/* deploy@johanledel.me:/var/www/johanledel.me/html/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,18 +30,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "Me-App-front ========",
-  "main": "index.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JohanLe/bth-ramverk1.git"
-  },
-  "author": "Johan Ledel",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JohanLe/bth-ramverk1/issues"
-  },
-  "homepage": "https://github.com/JohanLe/bth-ramverk1#readme"
+  }
 }

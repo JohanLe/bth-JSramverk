@@ -5,6 +5,9 @@ class Register extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            email: "",
+            password: "",
+            fullname: "",
             birthdate: '',
             errorMessage: false,
         };
@@ -23,7 +26,7 @@ class Register extends React.Component {
         return true;
     };
     validateMonth = (date) => {
-        var year = date.slice(0, 4);
+      //  var year = date.slice(0, 4);
         var month = date.slice(-2);
 
         if (isNaN(month)) {
@@ -37,9 +40,9 @@ class Register extends React.Component {
         return true;
     };
     validateDay = (date) => {
-        var year = date.slice(0, 4);
+       // var year = date.slice(0, 4);
         var month = date.slice(5, 7);
-        var day = date.slice(-2);
+       // var day = date.slice(-2);
 
         if (isNaN(month)) {
             this.setState({errorMessage: "Not a number"});
@@ -70,33 +73,75 @@ class Register extends React.Component {
 
     };
 
+    changeHandler = (event) => {
+        let nam = event.target.name;
+        let val = event.target.value;
+        this.setState({[nam]: val});
+    };
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        fetch("http://localhost:8333/register", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                fullname: this.state.fullname,
+                email: this.state.email,
+                password: this.state.password,
+                birthdate: this.state.birthdate
+            })
+        });
+    };
 
     render() {
         return (
             <div className="register_container">
-                <form className="form_register" method="" onSubmit={handleSubmit}>
+                <form className="form_register" method="post" onSubmit={this.handleSubmit}>
                     <label className="input_label">
                         Name
-                        <input name="name" required type="text"/>
+                        <input
+                            required
+                            name="fullname"
+                            type="text"
+                            onChange={this.changeHandler}
+                        />
                     </label>
 
                     <label className="input_label">
                         Email
-                        <input name="email" required type="email"/>
+                        <input
+                            required
+                            name="email"
+                            type="email"
+                            onChange={this.changeHandler}
+                        />
                     </label>
 
                     <label className="input_label">
                         Password
-                        <input name="password" required type="password"/>
+                        <input
+                            required
+                            name="password"
+                            type="password"
+                            onChange={this.changeHandler}
+                        />
                     </label>
 
                     <div className="date_picker_container">
 
                         <label className="input_label">
-                            <span>Birthdate </span><span
-                            className="small_description_text">e.g. 1900-01-01 (Y-M-D)</span>
-                            <input type="year" required name="birthdate" value={this.state.birthdate}
-                                   onChange={this.validateBirthdate} maxLength="10"/>
+                            <span>Birthdate </span><span className="small_description_text">e.g. 1900-01-01 (Y-M-D)</span>
+                            <input
+                                required
+                                type="year"
+                                name="birthdate"
+                                value={this.state.birthdate}
+                                onChange={this.validateBirthdate}
+                                maxLength="10"
+                            />
                             <p className="error_message">{this.state.errorMessage} </p>
                         </label>
                     </div>
@@ -121,7 +166,7 @@ class Register extends React.Component {
  * Return number of days a month has.
  * @ month 01-12 string.
  * @ year string as number
- */
+
 function numberOfDays(month, year) {
     var mon = month % 2;
     if (month === '02') {
@@ -147,10 +192,10 @@ function calculateLeapYear(year) {
     return false;
 }
 
-function handleSubmit(event) {
-    console.log("REGISTER");
-    event.preventDefault();
-}
+
+ */
+
+
 
 function openTermAndConditions(event) {
     console.log("Term and conditions");

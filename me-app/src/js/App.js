@@ -10,6 +10,8 @@ import Footer from './components/Footer.js';
 import Home from './components/Home.js';
 import Report from './components/Report.js';
 import Register from './components/Register.js';
+import Login from './components/Login.js';
+import ReportEdit from './components/ReportEdit.js';
 
 function App() {
     return (
@@ -20,6 +22,8 @@ function App() {
                     <Route exact path="/" component={Home}/>
                     <Route path="/reports/week/:kmom" component={Report}/>
                     <Route path="/register" component={Register}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/reports/edit/:kmom" component={ReportEdit}/>
 
                 </div>
                 <Footer/>

@@ -6,12 +6,12 @@ class HeaderMain extends React.Component {
         return <header className="App-header">
             <div className="link_container">
                 <Link exact url="/" text="Home" class="header_link"/>
-                <Link url="/reports/week/0" text="Reports" class="header_link"/>
+                <Link url="/reports/week/1" text="Reports" class="header_link"/>
                 <Link url="/register" text="Register" class="header_link"/>
-                <Link url="/about" text="About" class="header_link"/>
+                <Link url="/login" text="Login" class="header_link"/>
             </div>
         </header>
-    }xw
+    }
 }
 
 class HeaderReports extends React.Component {
@@ -24,6 +24,7 @@ class HeaderReports extends React.Component {
             <Link url="/reports/week/5" text="Week5" className="report_week_link"/>
             <Link url="/reports/week/6" text="Week6" className="report_week_link"/>
             <Link url="/reports/week/7" text="Week7" className="report_week_link"/>
+
         </div>
     }
 }
